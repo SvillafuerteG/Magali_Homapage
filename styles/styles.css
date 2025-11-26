@@ -1,0 +1,297 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colores base */
+:root {
+  --morado-oscuro: #2a003d;
+  --morado-claro: #7b2cbf;
+  --negro: #0d0d0d;
+  --blanco: #f5f5f5;
+}
+
+/* General */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--negro);
+  color: var(--blanco);
+  line-height: 1.6;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  flex-direction: column; /* centrado vertical y horizontal */
+  align-items: center;
+  justify-content: center;
+  background-color: var(--morado-oscuro);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.4s ease;
+}
+
+.navbar:hover {
+  background-color: #3b0066; /* tono un poco más claro al pasar el mouse */
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: var(--morado-claro);
+  margin-bottom: 0.5rem;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.logo:hover {
+  color: #9d4edd;
+  transform: scale(1.1);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Efecto subrayado animado */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--morado-claro);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--morado-claro);
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, var(--morado-oscuro), #1a001f);
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  transition: background 0.5s ease;
+}
+
+.hero:hover {
+  background: linear-gradient(135deg, #3b0066, #1a001f);
+}
+
+.intro h2 {
+  font-size: 2.5rem;
+  color: var(--morado-claro);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.intro h2:hover {
+  transform: scale(1.05);
+}
+
+.intro p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.intro p:hover {
+  opacity: 1;
+}
+
+.btn {
+  background-color: var(--morado-claro);
+  color: var(--blanco);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #a855f7;
+  transform: scale(1.05);
+}
+
+/* Historia page */
+.content {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--morado-claro);
+  font-size: 2rem;
+}
+
+/* Cards de historia */
+.card {
+  background: #1a001f;
+  border: 1px solid #3b0066;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 0 15px rgba(123, 44, 191, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(155, 78, 255, 0.6);
+}
+
+.card h3 {
+  color: var(--morado-claro);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.card h3:hover {
+  color: #9d4edd;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.card p:hover {
+  opacity: 0.95;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--morado-oscuro);
+  margin-top: 2rem;
+  color: #ccc;
+  transition: background-color 0.3s ease;
+}
+
+footer:hover {
+  background-color: #3b0066;
+}
+
+/* Imagen en el Home */
+.imagen-evolucion {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(to right, #1a001f, #2a003d);
+  border-top: 2px solid var(--morado-claro);
+}
+
+.imagen-evolucion h2 {
+  color: var(--morado-claro);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.img-evolucion {
+  width: 80%;
+  max-width: 900px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(123, 44, 191, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.img-evolucion:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 40px rgba(155, 78, 255, 0.7);
+}
+
+/* Imágenes de la historia */
+.img-historia {
+  display: block;
+  margin: 1rem auto 2rem;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(123, 44, 191, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-historia:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(155, 78, 255, 0.6);
+}
+  
+/* Tarjetas de juegos */
+.game-card {
+  background: #1d1d1d;
+  padding: 20px;
+  margin: 25px auto;
+  border-radius: 15px;
+  width: 80%;
+  color: white;
+  box-shadow: 0 0 10px #5a1d78;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.game-card:hover {
+  transform: scale(1.03);
+  background-color: #331a44;
+}
+
+.game-img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+/* Header */
+.header-lanzamientos {
+  text-align: center;
+  padding: 40px 20px;
+  color: white;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #000;
+  color: white;
+}
